@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
@@ -17,5 +18,20 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        ".flex-center": {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        },
+        ".flex-between": {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        },
+      });
+    }),
+  ],
 } satisfies Config;

@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <main className="container py-12">{children}</main>
+        <main className="min-h-screen">{children}</main>
       </body>
     </html>
   );
